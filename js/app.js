@@ -14,6 +14,9 @@ function totalPrice() {
     const totalCost = document.getElementById('total-cost');
     totalCost.innerText = parseInt(bestPrice) + parseInt(extraMemoryCost) + parseInt(extraStorageCost) + parseInt(extraDeliveryCost);
 
+    const totalAmount = document.getElementById('total-amount');
+    totalAmount.innerText = totalCost.innerText;
+
 }
 
 //event handler for memory 
@@ -61,7 +64,7 @@ function applyPromo() {
     const inputPromo = document.getElementById('promo-code').value;
 
     if (inputPromo == 'stevekaku') {
-        console.log('promo')
+
         const totalCost = document.getElementById('total-cost').innerText;
         const totalCostAmount = parseFloat(totalCost);
         const usedPromo = (totalCostAmount - (totalCostAmount * 0.2));
@@ -70,5 +73,8 @@ function applyPromo() {
         totalAmount.innerText = usedPromo;
 
     }
+
+    //clear input field
+    document.getElementById('promo-code').value = '';
 }
 
